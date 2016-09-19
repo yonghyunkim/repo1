@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- java.util.Date 타입의  프로퍼티 값 설정 -->
+   <bean id="b1" class="step13.Book">
+      <property name="title" value="자바 프로그래밍"/>
+      <property name="pages" value="800"/>
+      
+      <property name="releaseDate" value="2016-08-18"/>
+     
+  </bean>
+  
+  <!-- 커스텀 테이터를 등록하기 위해서는 먼저 
+  		스프링 Ioc 컨테이너에 커스텀 에디터를 관리해주는 객체를 꼽아야 한다.
+  		스프링 Ioc컨테이너를 위한 플러그인을 꼽고 싶으면, 스프링 문서에 정의된 대로 해당 객체를 선언하면 된다.  -->
+  		 
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	    <property name="customEditors">
+	        <map>
+	            <entry key="java.util.Date" value="step13.MyDateEditor"/>
+	        </map>
+	    </property>
+	</bean>
+	
+</beans>

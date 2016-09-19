@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+// 컴파일 옵션 지정하기
+compileJava {
+  options.encoding = 'UTF-8'  // 소스 파일의 인코딩 문자집합을 지정한다.
+  sourceCompatibility = '1.8' // 소스 파일의 문법을 검사할 때 사용할 자바 버전을 지정한다.
+}
+
+repositories {
+    mavenCentral()  
+}
+
+dependencies {
+  compile group: 'org.mybatis', name: 'mybatis', version: '3.4.1'
+  compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.39'
+  compile group: 'org.springframework', name: 'spring-context', version: '4.3.2.RELEASE'
+  
+}

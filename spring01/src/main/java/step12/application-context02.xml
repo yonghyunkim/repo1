@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+      
+    
+<!-- 1) 파라미터 값을 줘야 하는 스태틱 메서드가 리턴한 객체를 보관하기 스태틱메서드여야 한다.
+ constructor-arg 태그를 사용하여 파라미터값을 지정한다. -->
+
+   <bean id="p1" class="step12.PressFactory2" factory-method="createInstance">
+   	<constructor-arg value="오호라출판사"/>
+   	<constructor-arg value="1111-2222"/>
+   </bean>
+   
+</beans>

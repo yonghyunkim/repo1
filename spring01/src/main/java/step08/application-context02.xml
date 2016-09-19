@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 기본 생성자 호출 -->
+	<bean id="b1" class="step08.Book">
+		<constructor-arg value="자바 웹 프로그래밍" type="java.lang.String"/>
+		<constructor-arg value="560" type="int"/>
+	</bean>
+	
+	<!-- Book(String,int) : int와 String 값을 받는 생성자가 두개 있지마, 
+	String 타입을 우선한다는 법칙 때문에 이 생성자가 호출된다. -->
+	<bean id="b2" class="step08.Book">
+		<constructor-arg value="560" type="int"/>
+		<constructor-arg value="자바 웹 프로그래밍" type="java.lang.String"/>
+	</bean>
+	
+</beans>
